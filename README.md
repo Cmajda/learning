@@ -1,24 +1,27 @@
 # 1. Content
-
 <!-- TOC -->
 - [1. Content](#1-content)
-- [2. On Windows 10 WSL2](#2-on-windows-10-wsl2)
+- [2. Prerequisites](#2-prerequisites)
     - [2.1. Install WSL2 Win10](#21-install-wsl2-win10)
-    - [2.2. How to install docker WSL2](#22-how-to-install-docker-wsl2)
-    - [2.3. How to install k3d WSL2](#23-how-to-install-k3d-wsl2)
+    - [2.2. Install docker WSL2](#22-install-docker-wsl2)
+    - [2.3. Install k3d WSL2](#23-install-k3d-wsl2)
     - [2.4. Install K9s](#24-install-k9s)
 - [3. Help links](#3-help-links)
 <!-- /TOC -->
 
-# 2. On Windows 10 WSL2
-How to install and enable WSL2
+# 2. Prerequisites
+- Windows Subsystem for Linux (WSL2) 
+- Docker
+- K3d
+- K9s 
+
 ## 2.1. Install WSL2 Win10
 - [Microsoft doc](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-1---enable-the-windows-subsystem-for-linux)
 
-## 2.2. How to install docker WSL2
+## 2.2. Install docker WSL2
 - [Docker doc](https://docs.docker.com/docker-for-windows/wsl/#install)  
 
-## 2.3. How to install k3d WSL2
+## 2.3. Install k3d WSL2
 - [K3D doc](https://k3d.io/#install-script)
 
 ## 2.4. Install K9s
