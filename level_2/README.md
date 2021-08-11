@@ -112,4 +112,4 @@ NAME               READY   UP-TO-DATE   AVAILABLE   AGE
 logreader-deploy   1/1     1            1           40s
 ```
 kontrola v k9s  
-![screen](https://github.com/cmajda/trask-k8s/blob/master/k9s_logreader.png?raw=true)
+![screen](https://github.com/cmajda/trask-k8s/blob/master/level_2/img/k9s_logreader.png?raw=true)
