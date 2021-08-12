@@ -42,3 +42,4 @@ k9s
 - [Cesta bojovníka](https://confluence.trask.cz/display/IABLACKOPSKUBE/Basic+levels)
 - [Kubernetes web GUI](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 - [Create simple user for GUI](https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md)
+- [Git prezentace](https://github.com/amoravek/k8s)
