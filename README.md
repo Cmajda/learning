@@ -7,6 +7,14 @@
     - [2.3. Install k3d WSL2](#23-install-k3d-wsl2)
     - [2.4. Install K9s](#24-install-k9s)
 - [3. Help links](#3-help-links)
+- [4. Docker](#4-docker)
+    - [4.1. documentation](#41-documentation)
+    - [4.2. examples](#42-examples)
+        - [4.2.1. docker simple](#421-docker-simple)
+- [5. Kubernetes](#5-kubernetes)
+    - [5.1. documentation](#51-documentation)
+- [6. Linux](#6-linux)
+    - [6.1. documentation](#61-documentation)
 <!-- /TOC -->
 
 # 2. Prerequisites
@@ -43,3 +51,14 @@ k9s
 - [Kubernetes web GUI](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 - [Create simple user for GUI](https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md)
 - [Git prezentace](https://github.com/amoravek/k8s)
+
+# 4. Docker
+## 4.1. documentation
+- [docker command](docker/docs/docker-command.md)
+## 4.2. examples
+### 4.2.1. docker simple
+- [docker simple](docker/README.md)
+# 5. Kubernetes
+## 5.1. documentation
+# 6. Linux
+## 6.1. documentation
