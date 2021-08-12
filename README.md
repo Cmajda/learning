@@ -57,7 +57,7 @@ k9s
 - [docker command](docker/docs/docker-command.md)
 ## 4.2. examples
 ### 4.2.1. docker simple
-- [docker simple](docker/README.md)
+- [docker simple](docker/examples/docker-simple/README.md)
 # 5. Kubernetes
 ## 5.1. documentation
 # 6. Linux
