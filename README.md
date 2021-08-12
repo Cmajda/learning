@@ -51,6 +51,7 @@ k9s
 - [Kubernetes web GUI](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
 - [Create simple user for GUI](https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md)
 - [Git prezentace](https://github.com/amoravek/k8s)
+- [Git emoji](https://gist.github.com/roachhd/1f029bd4b50b8a524f3c)
 
 # 4. Docker
 ## 4.1. documentation
