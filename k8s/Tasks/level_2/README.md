@@ -1,13 +1,15 @@
 <!-- TOC -->
 - [1. Úkol](#1-úkol)
 - [2. Příprava image](#2-příprava-image)
-    - [2.1. Program `logreader.sh`](#21-program-logreadersh)
-    - [2.2. Docker file `Dockerfile`](#22-docker-file-dockerfile)
-    - [2.3. Build image](#23-build-image)
-    - [2.4. Push image to repository](#24-push-image-to-repository)
-        - [2.4.1. Prepare for DockerHub](#241-prepare-for-dockerhub)
-        - [2.4.2. Push image to DockerHub](#242-push-image-to-dockerhub)
-- [3. Kubernetes vytvořid deploy](#3-kubernetes-vytvořid-deploy)
+  - [2.1. Program `logreader.sh`](#21-program-logreadersh)
+  - [2.2. Docker file `Dockerfile`](#22-docker-file-dockerfile)
+  - [2.3. Build image](#23-build-image)
+  - [2.4. Push image to repository](#24-push-image-to-repository)
+    - [2.4.1. Prepare for DockerHub](#241-prepare-for-dockerhub)
+    - [2.4.2. Push image to DockerHub](#242-push-image-to-dockerhub)
+- [3. Kubernetes vytvořit deploy](#3-kubernetes-vytvořit-deploy)
+  - [3.1. Vytvořit yaml `logreader_deploy.yaml`](#31-vytvořit-yaml-logreader_deployyaml)
+  - [3.2. Deploy](#32-deploy)
 <!-- /TOC -->
 
 # 1. Úkol  
@@ -112,4 +114,4 @@ NAME               READY   UP-TO-DATE   AVAILABLE   AGE
 logreader-deploy   1/1     1            1           40s
 ```
 kontrola v k9s  
-![screen](https://github.com/cmajda/trask-k8s/blob/master/level_2/img/k9s_logreader.png?raw=true)
+![k9s](../../docs/imgs/k9s_logreader.png)
