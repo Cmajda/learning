@@ -45,11 +45,11 @@ k9s
 # 3. Help links
 - [Steram Docker](https://web.microsoftstream.com/video/b0255f53-d784-4787-89f2-e7a359dba90b)
 - [Stream Docker a Kubernetes](https://web.microsoftstream.com/video/aa13e911-351a-43c7-982a-6bd43f0ffd2e)
-- [Stream kubernetes I](https://web.microsoftstream.com/video/383405c2-0098-4e19-b4a8-fec2183a7aa1)
-- [Stream kubernetes II](https://web.microsoftstream.com/video/320963bd-c2c8-4701-933e-49e326c92f5e)
+- [Stream Kubernetes I](https://web.microsoftstream.com/video/383405c2-0098-4e19-b4a8-fec2183a7aa1)
+- [Stream Kubernetes II](https://web.microsoftstream.com/video/320963bd-c2c8-4701-933e-49e326c92f5e)
 - [Cesta bojovníka](https://confluence.trask.cz/display/IABLACKOPSKUBE/Basic+levels)
 - [Kubernetes web GUI](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
-- [Create simple user for GUI](https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md)
+- [Create a simple user for GUI](https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md)
 - [Git prezentace](https://github.com/amoravek/k8s)
 - [Git emoji](https://gist.github.com/roachhd/1f029bd4b50b8a524f3c)
 
