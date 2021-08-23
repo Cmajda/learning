@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-simple-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: docker-simple
+  template:
+    metadata:
+      labels:
+        app: docker-simple
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: docker-simple
+          image: cmajda/trask-docker-simple:1.0.3
+          resources: {}
+          ports:
+            - containerPort: 8800
