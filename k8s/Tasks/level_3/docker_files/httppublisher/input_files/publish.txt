@@ -1,0 +1,28 @@
+cat <<EOF >filetoranderize
+"We can't possibly have a summer love.
+So many people have tried that the name's become proverbial. 
+Summer is only the unfulfilled promise of spring, a charlatan in place of the warm balmy nights I dream of in April.
+It's a sad season of life without growth...It has no day."
+- F. Scott Fitzgerald
+
+"Everyone tries to make his life a work of art. 
+We want love to last and we know that it does not last; even if, by some miracle, it were to last a whole lifetime, it would still be incomplete. 
+Perhaps, in this insatiable need for perpetuation, we should better understand human suffering, if we knew that it was eternal. 
+It appears that great minds are, sometimes, less horrified by suffering than by the fact that it does not endure. 
+In default of inexhaustible happiness, eternal suffering would at least give us a destiny. 
+But we do not even have that consolation, and our worst agonies come to an end one day. 
+One morning, after many dark nights of despair, an irrepressible longing to live will announce to us the fact that all is finished and that suffering has no more meaning than happiness.”
+- Albert Camus
+
+I’m already my future corpse. 
+Only a dream links me to myself —
+The hazy and belated dream 
+Of what I should have been — a wall 
+Around my abandoned garden. 
+Take me, passing waves, 
+To the oblivion of the sea 
+Bequeath me to what I won’t be —
+I, who raised a scaffold 
+Around the house I never built. 
+- Fernando Pessoa
+EOF
