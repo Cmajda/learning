@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deploytest
+  name: apptest
   labels:
-    component: comptest
+    app: apptest
 spec:
   replicas: 1
   selector:
     matchLabels:
-      component: comptest
+      app: apptest
   template:
     metadata:
-      name: comptest
+      name: apptest
       labels:
-        component: comptest
+        app: apptest
     spec:
       containers:
-        - name: comptest
+        - name: apptest
           image: cmajda/trask-k8s-httppublisher:1.0.1
           ports:
             - containerPort: 8181
