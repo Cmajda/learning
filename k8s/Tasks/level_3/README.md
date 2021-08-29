@@ -89,7 +89,7 @@ docker push cmajda/trask-k8s-httpreader:1.0.2
 - kompletní zdroje - [`K8s_files`](k8s_files/)
 
 ### 2.3.1. Deployment
-- [`httppublisher.yaml`](k8s_files/namespace.yaml)  
+- [`httppublisher.yaml`](k8s_files/httppublisher.yaml)  
   
 	```
 	#NAMESPACE
