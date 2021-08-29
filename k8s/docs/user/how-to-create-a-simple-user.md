@@ -7,12 +7,12 @@ In this guide, we will find out how to create a new user using Service Account m
 **IMPORTANT:** Make sure that you know what you are doing before proceeding. Granting admin privileges to Dashboard's Service Account might be a security risk.
 
 For each of the following snippets for `ServiceAccount` and `ClusterRoleBinding`, you should copy them to new manifest files like `dashboard-adminuser.yaml` and use `kubectl apply -f dashboard-adminuser.yaml` to create them.  
-Or run [`run.sh`](../src/run.sh) in folder [`src`](../src/)
+Or run [`run.sh`](src/run.sh) in folder [`src`](src/)
 
 ## 1.1. Creating a Service Account
 
 We are creating Service Account with name `admin-k8swebgui` in namespace `kubernetes-dashboard` first.  
-[dashboard-adminuser.yaml](../src/dashboard-adminuser.yaml)
+[dashboard-adminuser.yaml](src/dashboard-adminuser.yaml)
 
 ```yaml
 apiVersion: v1
@@ -58,11 +58,11 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiw
 
 Now copy the token and paste it into `Enter token` field on the login screen.
 
-![Sing in](../imgs/signin.png)
+![Sing in](imgs/signin.png)
 
 Click `Sign in` button and that's it. You are now logged in as an admin.
 
-![Overview](../imgs/overview.png)
+![Overview](imgs/overview.png)
 
 ## 1.4. Clean up and next steps
 
