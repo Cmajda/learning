@@ -58,11 +58,11 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiw
 
 Now copy the token and paste it into `Enter token` field on the login screen.
 
-![Sing in](imgs/signin.png)
+![Sing in](/k8s/docs/imgs/signin.png)
 
 Click `Sign in` button and that's it. You are now logged in as an admin.
 
-![Overview](imgs/overview.png)
+![Overview](/k8s/docs/imgs/overview.png)
 
 ## 1.4. Clean up and next steps
 

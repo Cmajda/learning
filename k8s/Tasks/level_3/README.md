@@ -18,7 +18,7 @@
 		- [3.3.4. SERVICES](#334-services)
 	- [3.4. Rozsahy sítí (Cidr)](#34-rozsahy-sítí-cidr)
 		- [3.4.1. Seznam cidr](#341-seznam-cidr)
-- [4. HELP](#4-help)
+- [4. HELP commands](#4-help-commands)
 <!-- /TOC -->
 
 
@@ -268,12 +268,20 @@ svc-no-httppublisher   NodePort    10.43.208.64   <none>        8181:30081/TCP  
 	```
 
 
-# 4. HELP
-kubectl get nodes -o jsonpath='{.items[*].spec.podCIDR}'
-kubectl get pods -o jsonpath='{.items[*].spec.podCIDR}'
+# 4. HELP commands
+- get CIDRs
+```
+kubectl get nodes -o jsonpath='{.items[*].spec.podCIDR}'  
+kubectl get pods -o jsonpath='{.items[*].spec.podCIDR}'  
+```
+- Port-forward
+```
+kubectl port-forward deployments/httppublisher 8181:8181 -n default  
+```
 
-kubectl port-forward deployments/httppublisher 8181:8181 -n default
-
-kubectl delete all -l app=dev na základe labelll
-kubectl delete all --all -n {namespace} na zaklade namespace
-kubectl delete namespace {namespace} nebo celý namespace
+- Delete resources:
+```
+kubectl delete all -l app=dev na základe labelll  
+kubectl delete all --all -n {namespace} na zaklade namespace  
+kubectl delete namespace {namespace} nebo celý namespace  
+```
