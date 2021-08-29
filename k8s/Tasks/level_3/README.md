@@ -43,9 +43,9 @@
 ## 2.1. Vytvoření Docker images
   
 ### 2.1.1. Server - `httppublisher`
-- kompletní zdroje - [httppublisher](k8s/Tasks/level_3/docker_files/httppublisher/)  
+- kompletní zdroje - [httppublisher](docker_files/httppublisher/)  
 
-- [`httppublisher.sh`](k8s/Tasks/level_3/docker_files/httppublisher/httppublisher.sh)
+- [`httppublisher.sh`](docker_files/httppublisher/httppublisher.sh)
 
 	```
 	#!/bin/sh
@@ -59,12 +59,12 @@
 		) | timeout 1  nc -lp 8181
 	done
 	```
->:bulb: **nebo spustit: [`~$./build.sh`](k8s/Tasks/level_3/docker_files/httppublisher/build.sh)**  
+>:bulb: **nebo spustit: [`~$./build.sh`](docker_files/httppublisher/build.sh)**  
 
 ### 2.1.2. Client - `httpreader`
-- kompletní zdroje - [httpreader](k8s/Tasks/level_3/docker_files/httpreader/)  
+- kompletní zdroje - [httpreader](docker_files/httpreader/)  
 
-- [`httpreader.sh`](k8s/Tasks/level_3/docker_files/httpreader/httpreader.sh)  
+- [`httpreader.sh`](docker_files/httpreader/httpreader.sh)  
 	```
 	#!/bin/sh
 	while true
@@ -75,7 +75,7 @@
 	sleep 1
 	done
 	```
->:bulb: **nebo spustit: [`~$./build.sh`](k8s/Tasks/level_3/docker_files/httpreader/build.sh)**  
+>:bulb: **nebo spustit: [`~$./build.sh`](docker_files/httpreader/build.sh)**  
 
 ## 2.2. Push Docker images
 ```
@@ -86,10 +86,10 @@ docker push cmajda/trask-k8s-httpreader:1.0.2
 ```
 
 ## 2.3. K8S files
-- kompletní zdroje - [`K8s_files`](k8s/Tasks/level_3/k8s_files/)
+- kompletní zdroje - [`K8s_files`](k8s_files/)
 
 ### 2.3.1. Deployment
-- [`httppublisher.yaml`](k8s/Tasks/level_3/k8s_files/namespace.yaml)  
+- [`httppublisher.yaml`](k8s_files/namespace.yaml)  
   
 	```
 	#NAMESPACE
@@ -175,7 +175,7 @@ kubectl apply -f ./httppublisher.yaml
 ```
 kubectl config set-context --current --namespace nsp-httppublisher
 ```
->:bulb: **nebo spustit: [`~$./deploy.sh`](k8s/Tasks/level_3/k8s_files/deploy.sh)**  
+>:bulb: **nebo spustit: [`~$./deploy.sh`](k8s_files/deploy.sh)**  
 
 
 # 3. Výstup
