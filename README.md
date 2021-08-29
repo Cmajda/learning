@@ -14,6 +14,7 @@
 		- [4.2.1. docker simple](#421-docker-simple)
 - [5. Kubernetes](#5-kubernetes)
 	- [5.1. documentation](#51-documentation)
+	- [5.2. Task](#52-task)
 - [6. Linux](#6-linux)
 	- [6.1. documentation](#61-documentation)
 <!-- /TOC -->
@@ -114,6 +115,12 @@ sudo apt-get install -y kubectl
 # 5. Kubernetes
 
 ## 5.1. documentation
+
+## 5.2. Task
+[Task - 0 ](k8s/Tasks/level_0#readme)
+[Task - 1 ](k8s/Tasks/level_1#readme)
+[Task - 2 ](k8s/Tasks/level_2#readme)
+[Task - 3 ](k8s/Tasks/level_3#readme)
 
 # 6. Linux
 
