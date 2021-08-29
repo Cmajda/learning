@@ -2,20 +2,20 @@
 <!-- TOC -->
 - [1. Content](#1-content)
 - [2. Prerequisites](#2-prerequisites)
-    - [2.1. Install WSL2 Win10](#21-install-wsl2-win10)
-    - [2.2. Install docker](#22-install-docker)
-    - [2.3. Install k3d WSL2](#23-install-k3d-wsl2)
-    - [2.4. Install K9s](#24-install-k9s)
-    - [2.5. Install Kubectl](#25-install-kubectl)
+	- [2.1. Install WSL2 Win10](#21-install-wsl2-win10)
+	- [2.2. Install docker](#22-install-docker)
+	- [2.3. Install k3d WSL2](#23-install-k3d-wsl2)
+	- [2.4. Install K9s](#24-install-k9s)
+	- [2.5. Install Kubectl](#25-install-kubectl)
 - [3. Help links](#3-help-links)
 - [4. Docker](#4-docker)
-    - [4.1. documentation](#41-documentation)
-    - [4.2. examples](#42-examples)
-        - [4.2.1. docker simple](#421-docker-simple)
+	- [4.1. documentation](#41-documentation)
+	- [4.2. examples](#42-examples)
+		- [4.2.1. docker simple](#421-docker-simple)
 - [5. Kubernetes](#5-kubernetes)
-    - [5.1. documentation](#51-documentation)
+	- [5.1. documentation](#51-documentation)
 - [6. Linux](#6-linux)
-    - [6.1. documentation](#61-documentation)
+	- [6.1. documentation](#61-documentation)
 <!-- /TOC -->
 
 # 2. Prerequisites
@@ -98,6 +98,7 @@ sudo apt-get install -y kubectl
 - [Create a simple user for GUI](https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md)
 - [Git prezentace](https://github.com/amoravek/k8s)
 - [Git emoji](https://gist.github.com/roachhd/1f029bd4b50b8a524f3c)
+- [Git emoji 2](https://gist.github.com/rxaviers/7360908)
 
 # 4. Docker
 
