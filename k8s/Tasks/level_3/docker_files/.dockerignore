@@ -1,6 +1,0 @@
-.git
-.cache
-*.md
-!README.md
-Dockerfile
-build.sh
