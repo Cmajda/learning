@@ -1,6 +1,6 @@
 <!-- TOC -->
 - [1. Úkol](#1-úkol)
-- [2. Steps](#2-steps)
+- [2. Postup](#2-postup)
 	- [2.1. Vytvoření Docker images](#21-vytvoření-docker-images)
 		- [2.1.1. Server - `httppublisher`](#211-server---httppublisher)
 		- [2.1.2. Client - `httpreader`](#212-client---httpreader)
@@ -18,7 +18,8 @@
 		- [3.3.4. SERVICES](#334-services)
 	- [3.4. Rozsahy sítí (Cidr)](#34-rozsahy-sítí-cidr)
 		- [3.4.1. Seznam cidr](#341-seznam-cidr)
-- [4. HELP commands](#4-help-commands)
+- [4. Vyčištění zdrojů](#4-vyčištění-zdrojů)
+- [5. HELP commands](#5-help-commands)
 <!-- /TOC -->
 
 
@@ -38,7 +39,7 @@
   - NODY (node CIDR)
   - Služby (service CIDR)
 
-# 2. Steps
+# 2. Postup
 
 ## 2.1. Vytvoření Docker images
   
@@ -267,8 +268,14 @@ svc-no-httppublisher   NodePort    10.43.208.64   <none>        8181:30081/TCP  
 	"podCIDR": "10.42.0.0/24"
 	```
 
+# 4. Vyčištění zdrojů
+```
+kubectl delete namespace nsp-httppublisher
+kubectl config set-context --current --namespace default
+```
+>:bulb: **nebo spustit: [`~$./clear.sh`](k8s_files/clear.sh)**     
 
-# 4. HELP commands
+# 5. HELP commands
 - get CIDRs
 ```
 kubectl get nodes -o jsonpath='{.items[*].spec.podCIDR}'  
