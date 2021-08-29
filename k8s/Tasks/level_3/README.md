@@ -28,12 +28,12 @@
 - kontejner nahrát do container repository
 - vytvořit servisu typu ClusterIP, která bude port na PODu referencovat `(selector)`
 - pro kontejner vytvořit Deployment v k3d a nějakým způsobem se na port pro servisu připojit `(curl http://service-name:port)`
-  - hinty: 
+  - hints: 
     - IP adresa podu by měla být v `kubectl get endpoints`
-    - pokud se chcete připojit ze svého localhostu, je potřeba port forwardovat k vám `(kubectl port-forward)`
+    - pokud se chcete připojit ze svého localhost, je potřeba port forwardovat k vám `(kubectl port-forward)`
     - možnost je vytvořit si kontejner obsahující curl na tento kontejner se připojit `(kubectl exec ... a spustit curl ale pozor na adresu pro SVC)`
 - pro ten samý kontejner vytvořte servisu typu NodePort
-- test přístup ze svého localhostu
+- test přístup ze svého localhost
 - zjistit rozsahy sítí pro:
   - PODY (pod CIDR)
   - NODY (node CIDR)
@@ -257,13 +257,13 @@ svc-no-httppublisher   NodePort    10.43.208.64   <none>        8181:30081/TCP  
 
 ### 3.4.1. Seznam cidr
 - s nastavenýma rozsahama  
-`kubectl cluster-info dump ayml | grep -i cidr`
+`kubectl cluster-info dump yaml | grep -i cidr`
 	```
 	"k3s.io/node-args": "[\"server\",\"--cluster-cidr\",\"10.118.0.0/17\",\"--service-cidr\",\"10.118.128.0/17\",\"--disable\",\"servicelb\",\"--disable\",\"traefik\",\"--tls-san\",\"0.0.0.0\"]",
 	"podCIDR": "10.118.0.0/24"
 	```
 - bez nastavení (výchozí)
-`kubectl cluster-info dump ayml | grep -i -m 1 cidr`  
+`kubectl cluster-info dump yaml | grep -i -m 1 cidr`  
 	```
 	"podCIDR": "10.42.0.0/24"
 	```
@@ -288,7 +288,7 @@ kubectl port-forward deployments/httppublisher 8181:8181 -n default
 
 - Delete resources:
 ```
-kubectl delete all -l app=dev na základe labelll  
-kubectl delete all --all -n {namespace} na zaklade namespace  
+kubectl delete all -l app=dev na základe labels  
+kubectl delete all --all -n {namespace} na základě namespace  
 kubectl delete namespace {namespace} nebo celý namespace  
 ```
