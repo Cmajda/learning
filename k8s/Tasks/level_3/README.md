@@ -1,6 +1,6 @@
 <!-- TOC -->
 - [1. Úkol](#1-úkol)
-- [2. Steps](#2-steps)
+- [2. Postup](#2-postup)
 	- [2.1. Vytvoření Docker images](#21-vytvoření-docker-images)
 		- [2.1.1. Server - `httppublisher`](#211-server---httppublisher)
 		- [2.1.2. Client - `httpreader`](#212-client---httpreader)
@@ -39,7 +39,7 @@
   - NODY (node CIDR)
   - Služby (service CIDR)
 
-# 2. Steps
+# 2. Postup
 
 ## 2.1. Vytvoření Docker images
   
