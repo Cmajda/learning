@@ -7,16 +7,21 @@
 	- [2.3. Install k3d WSL2](#23-install-k3d-wsl2)
 	- [2.4. Install K9s](#24-install-k9s)
 	- [2.5. Install Kubectl](#25-install-kubectl)
-- [3. Help links](#3-help-links)
+- [3. Kubernetes](#3-kubernetes)
+	- [3.1. documentation](#31-documentation)
+		- [3.1.1. Install WebGui (Dashboard)](#311-install-webgui-dashboard)
+	- [3.2. Tasks](#32-tasks)
+		- [3.2.1. Task - 0](#321-task---0)
+		- [3.2.2. Task - 1](#322-task---1)
+		- [3.2.3. Task - 2](#323-task---2)
+		- [3.2.4. Task - 3](#324-task---3)
 - [4. Docker](#4-docker)
 	- [4.1. documentation](#41-documentation)
 	- [4.2. examples](#42-examples)
 		- [4.2.1. docker simple](#421-docker-simple)
-- [5. Kubernetes](#5-kubernetes)
+- [5. Linux](#5-linux)
 	- [5.1. documentation](#51-documentation)
-	- [5.2. Task](#52-task)
-- [6. Linux](#6-linux)
-	- [6.1. documentation](#61-documentation)
+- [6. Help links](#6-help-links)
 <!-- /TOC -->
 
 # 2. Prerequisites
@@ -89,17 +94,40 @@ sudo apt-get install -y kubectl
 
 ```
 
-# 3. Help links
-- [Steram Docker](https://web.microsoftstream.com/video/b0255f53-d784-4787-89f2-e7a359dba90b)
-- [Stream Docker a Kubernetes](https://web.microsoftstream.com/video/aa13e911-351a-43c7-982a-6bd43f0ffd2e)
-- [Stream Kubernetes I](https://web.microsoftstream.com/video/383405c2-0098-4e19-b4a8-fec2183a7aa1)
-- [Stream Kubernetes II](https://web.microsoftstream.com/video/320963bd-c2c8-4701-933e-49e326c92f5e)
-- [Cesta bojovníka](https://confluence.trask.cz/display/IABLACKOPSKUBE/Basic+levels)
-- [Kubernetes web GUI](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
-- [Create a simple user for GUI](https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md)
-- [Git prezentace](https://github.com/amoravek/k8s)
-- [Git emoji](https://gist.github.com/roachhd/1f029bd4b50b8a524f3c)
-- [Git emoji 2](https://gist.github.com/rxaviers/7360908)
+# 3. Kubernetes
+
+## 3.1. documentation
+
+### 3.1.1. Install WebGui (Dashboard)
+- [How to install WebGui](k8s/docs/kube-webui#1-install-web-ui-dashbord-ui)
+- [How to create user](k8s/docs/user/how-to-create-a-simple-user.md#1-how-to-create-a-simple-user)
+
+## 3.2. Tasks
+
+### 3.2.1. Task - 0
+- Připravit lokální Kubernetes cluster (k3d)  
+
+[README](k8s/Tasks/level_0#readme)  
+
+### 3.2.2. Task - 1 
+- Seznámit se se základními principy definice a správy zdrojů v Kubernetes:  
+
+[README](k8s/Tasks/level_1#readme)  
+
+### 3.2.3. Task - 2
+- Vytvoření kontejneru s programovou částí ,který načte soubor s logy a každé dvě sekundy zobrazí náhodný řádek  
+
+[README](k8s/Tasks/level_2#readme)  
+
+### 3.2.4. Task - 3  
+- vytvořit kontejneru s programovou částí,který vypisuje jeden náhodný řádek ze souboru a tento řádek publikuje jako http response na http request.
+- vytvořit servisu typu ClusterIP a NODEPORT
+- zjistit rozsahy sítí pro:
+	PODY (pod CIDR)  
+	NODY (node CIDR)  
+	Služby (service CIDR)
+
+[README](k8s/Tasks/level_3#readme)  
 
 # 4. Docker
 
@@ -112,16 +140,18 @@ sudo apt-get install -y kubectl
 - [Sources](docker/examples/docker-simple/)
 - [Doc](docker/examples#docker-simple)
 
-# 5. Kubernetes
+# 5. Linux
 
 ## 5.1. documentation
 
-## 5.2. Task
-[Task - 0 ](k8s/Tasks/level_0#readme)
-[Task - 1 ](k8s/Tasks/level_1#readme)
-[Task - 2 ](k8s/Tasks/level_2#readme)
-[Task - 3 ](k8s/Tasks/level_3#readme)
-
-# 6. Linux
-
-## 6.1. documentation
+# 6. Help links
+- [Steram Docker](https://web.microsoftstream.com/video/b0255f53-d784-4787-89f2-e7a359dba90b)
+- [Stream Docker a Kubernetes](https://web.microsoftstream.com/video/aa13e911-351a-43c7-982a-6bd43f0ffd2e)
+- [Stream Kubernetes I](https://web.microsoftstream.com/video/383405c2-0098-4e19-b4a8-fec2183a7aa1)
+- [Stream Kubernetes II](https://web.microsoftstream.com/video/320963bd-c2c8-4701-933e-49e326c92f5e)
+- [Cesta bojovníka](https://confluence.trask.cz/display/IABLACKOPSKUBE/Basic+levels)
+- [Kubernetes web GUI](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+- [Create a simple user for GUI](https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md)
+- [Git prezentace](https://github.com/amoravek/k8s)
+- [Git emoji](https://gist.github.com/roachhd/1f029bd4b50b8a524f3c)
+- [Git emoji 2](https://gist.github.com/rxaviers/7360908)
