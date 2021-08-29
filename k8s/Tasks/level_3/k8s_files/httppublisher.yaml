@@ -1,0 +1,74 @@
+#NAMESPACE
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nsp-httppublisher
+  labels:
+    app: httppublisher
+---
+#SVC CLUSTER_IP
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-cl-httppublisher
+  namespace: nsp-httppublisher
+spec:
+  selector:
+    app: httppublisher
+  ports:
+    - name: http
+      port: 8181
+      protocol: TCP
+      targetPort: 8181
+  type: ClusterIP
+---
+#DEPLOYMENT
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dep-httppublisher
+  namespace: nsp-httppublisher
+spec:
+  selector:
+    matchLabels:
+      app: httppublisher
+  replicas: 2
+  template:
+    metadata:
+      namespace: nsp-httppublisher
+      labels:
+        app: httppublisher
+    spec:
+      containers:
+        - name: httppublisher
+          image: cmajda/trask-k8s-httppublisher:1.0.3
+          ports:
+            - containerPort: 8181
+              protocol: TCP
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+        - name: httpreader
+          image: cmajda/trask-k8s-httpreader:1.0.2
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+---
+#SVC NODEPORT
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-no-httppublisher
+  namespace: nsp-httppublisher
+  labels:
+    app: httppublisher
+spec:
+  selector:
+    app: httppublisher
+  type: NodePort
+  ports:
+    - targetPort: 8181
+      port: 8181
+      nodePort: 30081
