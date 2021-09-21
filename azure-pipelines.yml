@@ -2,7 +2,13 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
-
+resources:
+  repositories:
+  - repository: MyGitHubToolsRepo # The name used to reference this repository in the checkout step
+    type: github
+    endpoint: MyGitHubServiceConnection
+    name: Cmajda/learning
+    
 trigger:
 - master
 
@@ -10,21 +16,11 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
-- stage: Build
+- stage: Validate
   jobs:
-  - job: BuildJob
+  - job: terraform
     steps:
-    - script: echo Building!
-- stage: Test
-  jobs:
-  - job: TestOnWindows
-    steps:
-    - script: echo Testing on Windows!
-  - job: TestOnLinux
-    steps:
-    - script: echo Testing on Linux!
-- stage: Deploy
-  jobs:
-  - job: Deploy
-    steps:
-    - script: echo Deploying the code!
+    - task: TerraformInstaller@0
+      displayName: "Install Terraform"
+      inputs:
+        terraformVersion: '1.0.7'
