@@ -6,7 +6,7 @@ resources:
   repositories:
   - repository: MyGitHubToolsRepo # The name used to reference this repository in the checkout step
     type: github
-    endpoint: MyGitHubServiceConnection
+    endpoint: Cmajda
     name: Cmajda/learning
     
 trigger:
