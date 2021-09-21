@@ -20,12 +20,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-stages:
-- stage: Validate
-  jobs:
-  - job: Installterraform
-    steps:
-    - task: TerraformInstaller@0
-      displayName: "Install Terraform"
-      inputs:
-        terraformVersion: '1.0.7'
+steps:
+- task: TerraformInstaller@0
+  inputs:
+    terraformVersion: '1.0.7'
