@@ -10,7 +10,12 @@ resources:
     name: Cmajda/learning
     
 trigger:
-- master
+  branches:
+    include:
+      - master
+  paths:
+    include:
+      - maint.tf
 
 pool:
   vmImage: ubuntu-latest
@@ -18,7 +23,7 @@ pool:
 stages:
 - stage: Validate
   jobs:
-  - job: terraform
+  - job: Installterraform
     steps:
     - task: TerraformInstaller@0
       displayName: "Install Terraform"
