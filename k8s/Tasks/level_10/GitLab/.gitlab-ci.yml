@@ -26,6 +26,9 @@ stages:
   - build
 
 validate:
+  rules:
+    - changes:
+        - "*.tf"
   tags:
     - kubernetes-root
   stage: validate
@@ -33,6 +36,11 @@ validate:
     - terraform validate
 
 plan:
+  rules:
+    - changes:
+        - "*.tf"
+  dependencies:
+    - validate
   tags:
     - kubernetes-root
   stage: build
