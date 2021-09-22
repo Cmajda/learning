@@ -130,5 +130,9 @@ docker-simple       1.0.1          7e956e990bb5   12 hours ago   22.8MB
 pročištění images s tagem <none> 
 ```
 docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+```  
+or
+```
+docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
 ```
 # Build a vrstvy
