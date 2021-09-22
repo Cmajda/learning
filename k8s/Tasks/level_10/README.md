@@ -25,8 +25,8 @@ pozn: apply těchto manifestů zatím vynecháme, tzn stačí je pouze vygenerov
 - vytvořit index.html obsah "Hurá CI/CD"
 - Vytvořit AKS (Azure kubernetes services) - by terraform
 - Vytvořit ACR (Azure container registry) - by terraform
-- repository AzureDevOps
-- CI/CD Devops
+- repository GitLab
+- CI/CD GitLab
 
 # 3. Postup
 
