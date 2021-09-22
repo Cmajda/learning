@@ -4,7 +4,8 @@
 - [3. Postup](#3-postup)
 	- [3.1. CI/CD Infra](#31-cicd-infra)
 		- [3.1.1. Pipeline create Infra](#311-pipeline-create-infra)
-		- [3.1.2. Pipeline application](#312-pipeline-application)
+	- [3.2. CI/CD application](#32-cicd-application)
+		- [3.2.1. Pipeline application](#321-pipeline-application)
 - [4. výsledek](#4-výsledek)
 <!-- /TOC -->
 
@@ -34,6 +35,11 @@ pozn: apply těchto manifestů zatím vynecháme, tzn stačí je pouze vygenerov
 - Terraform vytvoří:
     - AKS
     - ACR
+- prereqizity
+  - Backend pro tf.state 
+    - RG
+    - ST
+    - Container
 
 ### 3.1.1. Pipeline create Infra
  - terraform validate
@@ -41,7 +47,9 @@ pozn: apply těchto manifestů zatím vynecháme, tzn stačí je pouze vygenerov
  - terraform plan
  - terraform apply
 
-### 3.1.2. Pipeline application
+## 3.2. CI/CD application
+
+### 3.2.1. Pipeline application
  - build image
  - push
  - deploy
