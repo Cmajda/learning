@@ -21,6 +21,9 @@
 pozn: apply těchto manifestů zatím vynecháme, tzn stačí je pouze vygenerovat a pak apply ručně
 
 # 2. Návrh
+- dvě pipeline
+  - první na vytvoření infra
+  - duhá na build a deploy aplikace
 - aplikace nginx statický web server (from image nginx)
 - vytvořit index.html obsah "Hurá CI/CD"
 - Vytvořit AKS (Azure kubernetes services) - by terraform
