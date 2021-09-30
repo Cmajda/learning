@@ -37,7 +37,6 @@ resource "azurerm_resource_group" "rg_ne_network" {
   location = var.location
 }
 
-
 resource "azurerm_network_security_group" "nsg" {
   name                = "nsg-ne-${lower(var.projectname)}"
   location            = azurerm_resource_group.rg_ne_network.location
@@ -54,8 +53,9 @@ resource "azurerm_virtual_network" "vnet" {
   name                = "vnet-ne-${lower(var.projectname)}"
   location            = azurerm_resource_group.rg_ne_network.location
   resource_group_name = azurerm_resource_group.rg_ne_network.name
-  address_space       = ["10.0.0.0/16"]
-
+  address_space = [
+    "10.0.0.0/16",
+  ]
   ddos_protection_plan {
     id     = azurerm_network_ddos_protection_plan.ddos_plan.id
     enable = true
@@ -66,8 +66,9 @@ resource "azurerm_subnet" "subnet_aks" {
   name                 = "sub-ne-${lower(var.projectname)}"
   virtual_network_name = azurerm_virtual_network.vnet.name
   resource_group_name  = azurerm_virtual_network.vnet.resource_group_name
-  address_prefixes     = ["10.0.3.0/24"]
-
+  address_prefixes = [
+    "10.0.3.0/24",
+  ]
 }
 
 resource "azurerm_subnet_network_security_group_association" "example" {
@@ -88,22 +89,22 @@ resource "azurerm_kubernetes_cluster" "aks" {
   dns_prefix          = "${var.projectname}-aks"
   node_resource_group = "${var.projectname}-aks"
   sku_tier            = "Free"
-
   default_node_pool {
-    name               = "default"
-    node_count         = "1"
-    availability_zones = ["1", "2", "3"]
-    vm_size            = "Standard_E2S_v3"
-    vnet_subnet_id     = azurerm_subnet.subnet_aks.id
+    name       = "default"
+    node_count = "1"
+    availability_zones = [
+      "1",
+      "2",
+      "3",
+    ]
+    vm_size        = "Standard_E2S_v3"
+    vnet_subnet_id = azurerm_subnet.subnet_aks.id
   }
-
   identity {
     type                      = "UserAssigned"
     user_assigned_identity_id = azurerm_user_assigned_identity.aks_identity.id
   }
-
   role_based_access_control {
     enabled = true
   }
-
 }

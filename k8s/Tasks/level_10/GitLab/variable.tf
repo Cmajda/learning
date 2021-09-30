@@ -1,6 +1,7 @@
 variable "projectname" {
-  default = "HelloCiCd"
+  default = "HelloCiCd_test"
 }
+
 variable "location" {
   default = "northeurope"
 }
