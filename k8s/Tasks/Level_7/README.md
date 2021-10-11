@@ -1,5 +1,17 @@
+<!-- TOC -->
+- [1. Úkol](#1-úkol)
+- [2. postup](#2-postup)
+	- [2.1. Vytvořit 3 namespace](#21-vytvořit-3-namespace)
+	- [2.2. vytvořit žádost o retifikát (součástí je klíčový pár)](#22-vytvořit-žádost-o-retifikát-součástí-je-klíčový-pár)
+	- [2.3. schválit žádost](#23-schválit-žádost)
+	- [2.4. Export Kubeconfig](#24-export-kubeconfig)
+	- [2.5. Install yq](#25-install-yq)
+	- [2.6. vytvořit cluster alice](#26-vytvořit-cluster-alice)
+	- [2.7. Vytvořit cluster bob](#27-vytvořit-cluster-bob)
+	- [2.8. Kontrola configu `./kcfg`](#28-kontrola-configu-kcfg)
+<!-- /TOC -->
 
-# Úkol
+# 1. Úkol
 - podívat se na agregované role
 - zadání:
 	- cluster napojit na Trask ID (viz. ukázka) - N/A
@@ -18,9 +30,10 @@
 	- vytvořit namespacované CRD (DODÁM) a přidat práva na jeho CR do agregovaných rolí view/edit/ admin - NONE
 	- skupina "Trask employees" má právo čtení configMap v namespace "kube-system" a "default" - NONE
 	- v souboru kcfg nakonfigurovat kubectl kontexty "bob", "alice", "admin", "oidc", "monitor", "audit" - první dva jsou o uživatelích, třetí je cluster admin, čtvrtý je váš Traskový účet a poslední dva jsou o serviceAccount - NONE
-# postup
 
-## Vytvořit 3 namespace
+# 2. postup
+
+## 2.1. Vytvořit 3 namespace
 - alice
 - bob
 - developers
@@ -30,7 +43,7 @@ kubectl create namespace bob
 kubectl create namespace developers
 ```
 
-## vytvořit žádost o retifikát (součástí je klíčový pár)
+## 2.2. vytvořit žádost o retifikát (součástí je klíčový pár)
 ```
 openssl req -new -newkey rsa:1024 -keyout alice.pem -nodes -out - -subj "/CN=alice/O=developers" 2>/dev/null | base64 -w0 > alice.csr
 openssl req -new -newkey rsa:1024 -keyout bob.pem -nodes -out - -subj "/CN=bob/O=developers" 2>/dev/null | base64 -w0 > bob.csr
@@ -64,7 +77,7 @@ k get csr
 - ![request](./img/cert_request.png)
 
 
-## schválit žádost
+## 2.3. schválit žádost
 ```
 k certificate approve alice
 k certificate approve bob
@@ -88,7 +101,8 @@ $b=kubectl get rolebindings.rbac.authorization.k8s.io -A -o json |ConvertFrom-Js
 
 pwsh -command (kubectl get rolebindings.rbac.authorization.k8s.io -A -o json |ConvertFrom-Json -AsHashtable).items | (where {$_.roleRef.kind -like "ClusterRole"} | select metadata).metadata.name
 ```
-## Export Kubeconfig
+
+## 2.4. Export Kubeconfig
 ```
 cd ~/.kube
 export KUBECONFIG=./kcfg
@@ -96,14 +110,16 @@ kopírovat pem do ~/.kube
 cp /home/cmajda2/projects/trask/learning/k8s/Tasks/Level_7/alice.pem .
 cp /home/cmajda2/projects/trask/learning/k8s/Tasks/Level_7/bob.pem .
 ```
-## Install yq
+
+## 2.5. Install yq
 ```
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys CC86BB64
 sudo add-apt-repository ppa:rmescandon/yq
 sudo apt update
 sudo apt install yq -y
 ```
-## vytvořit cluster alice
+
+## 2.6. vytvořit cluster alice
 ```
 k config set-cluster alice --server $(KUBECONFIG=./config kubectl config view --minify | yq e '.clusters[0].cluster.server' - )
 k config set-cluster alice --embed-certs --certificate-authority <(KUBECONFIG=./config kubectl config view --minify --raw | yq e '.clusters[0].cluster.certificate-authority-data' - | base64 -d)
@@ -112,7 +128,7 @@ k config set-context alice --cluster alice --user alice --namespace=alice
 k config use-context alice
 ```
 
-## Vytvořit cluster bob
+## 2.7. Vytvořit cluster bob
 ```
 k config set-cluster bob --server $(KUBECONFIG=./config kubectl config view --minify | yq e '.clusters[0].cluster.server' - )
 k config set-cluster bob --embed-certs --certificate-authority <(KUBECONFIG=./config kubectl config view --minify --raw | yq e '.clusters[0].cluster.certificate-authority-data' - | base64 -d)
@@ -120,6 +136,7 @@ k config set-credentials bob --embed-certs --client-key alice.pem --client-certi
 k config set-context bob --cluster bob --user bob
 k config use-context bob
 ```
-## Kontrola configu `./kcfg`
+
+## 2.8. Kontrola configu `./kcfg`
 cat kcfg
 	![approved](./img/kcfg.png)
