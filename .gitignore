@@ -4,3 +4,8 @@
 k8s/Tasks/level_10/GitLab/.terraform.lock.hcl
 k8s/Tasks/level_10/GitLab/.terraform/terraform.tfstate
 k8s/Tasks/level_10/GitLab/.terraform/providers/registry.terraform.io/hashicorp/azurerm/2.57.0/linux_amd64/terraform-provider-azurerm_v2.57.0_x5
+.terraform/
+.vscode/
+.DS_Store
+*.tfstate*
+**/*terraform.lock.hcl
