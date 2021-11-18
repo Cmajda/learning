@@ -9,3 +9,4 @@ k8s/Tasks/level_10/GitLab/.terraform/providers/registry.terraform.io/hashicorp/a
 .DS_Store
 *.tfstate*
 **/*terraform.lock.hcl
+k8s/Tasks/CertMgr_Ingress_controler_letsEncrypt/pom.md
