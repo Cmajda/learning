@@ -1,4 +1,4 @@
-- `Azure DNS` - správa DNS záznamů- [1. Prepare Branch](#1-prepare-branch)
+- [1. Prepare Branch](#1-prepare-branch)
 - [2. Task](#2-task)
 - [3. Technoligie](#3-technoligie)
 - [4. Prerekvizity](#4-prerekvizity)
@@ -24,14 +24,14 @@ Nasadit aplikaci "hello-kubernetes" která standartně komunikuje jen HTTP (80),
 
 Použijeme tyto technologie:
 
-- `Terraform`
+- `Terraform` - vztvo5en9 infrastrukurz
 - `AKS` - prostředí
 - `NGINX` - ingress controller
 - `CertManager` - správce certifikátů
 - `Let's Encrypt` - vydavatel certifikátů
 
 Pro usnadnění práce použijeme tyto doplňkové technologie:
-
+- `Azure DNS` - správa DNS záznamů
 - `External DNS` - automatický provisioning DNS záznamů
 - `Hello-kubernetes` - testovací aplikace
 
