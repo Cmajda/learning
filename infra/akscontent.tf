@@ -72,12 +72,25 @@ resource "kubernetes_namespace" "example" {
     name = "hello-ci-cd"
   }
 }
+
+resource "kubernetes_namespace" "hello-kubernetes" {
+  provider = kubernetes.provider_ku_aks
+  depends_on = [
+    helm_release.certmanager
+  ]
+  metadata {
+    name = "hello-kubernetes"
+  }
+}
+
 resource "kubernetes_namespace" "Mongodb" {
   provider = kubernetes.provider_ku_aks
   depends_on = [
     helm_release.certmanager
   ]
   metadata {
-    name = "mongo-db-test"
+    annotations = {}
+    labels      = {}
+    name        = "mongo-db-test"
   }
 }
