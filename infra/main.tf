@@ -91,6 +91,26 @@ resource "azurerm_kubernetes_cluster" "aks" {
   node_resource_group = "${var.projectname}-aks"
   sku_tier            = "Free"
   tags                = merge(azurerm_resource_group.rg_ne_aks.tags, { description = "AKS for Application ${var.aks_application_list}" })
+  addon_profile {
+    http_application_routing {
+      enabled = true
+    }
+    aci_connector_linux {
+      enabled = false
+    }
+    azure_policy {
+      enabled = false
+    }
+    ingress_application_gateway {
+      enabled = false
+    }
+    kube_dashboard {
+      enabled = false
+    }
+    oms_agent {
+      enabled = false
+    }
+  }
 
   default_node_pool {
     name               = "default"
