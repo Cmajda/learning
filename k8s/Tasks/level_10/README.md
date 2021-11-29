@@ -2,12 +2,13 @@ DRAFT
 <!-- TOC -->
 - [1. Úkol](#1-úkol)
 - [2. Návrh](#2-návrh)
-- [3. Postup](#3-postup)
-	- [3.1. CI/CD Infra (done)](#31-cicd-infra-done)
-		- [3.1.1. Pipeline create Infra](#311-pipeline-create-infra)
-	- [3.2. CI/CD application (In progress)](#32-cicd-application-in-progress)
-		- [3.2.1. Pipeline application](#321-pipeline-application)
-- [4. výsledek](#4-výsledek)
+- [3. Cennový odhad](#3-cennový-odhad)
+- [4. Postup](#4-postup)
+	- [4.1. CI/CD Infra (done)](#41-cicd-infra-done)
+		- [4.1.1. Pipeline create Infra](#411-pipeline-create-infra)
+	- [4.2. CI/CD application (In progress)](#42-cicd-application-in-progress)
+		- [4.2.1. Pipeline application](#421-pipeline-application)
+- [5. výsledek](#5-výsledek)
 <!-- /TOC -->
 
 # 1. Úkol  
@@ -30,9 +31,19 @@ pozn: apply těchto manifestů zatím vynecháme, tzn stačí je pouze vygenerov
 - repository GitLab
 - CI/CD GitLab
 
-# 3. Postup
+![web](./img/arch.png)
 
-## 3.1. CI/CD Infra (done)
+# 3. Cennový odhad
+na základě azure kalkulátoru  
+[WEST EUROPE](https://azure.com/e/d655bcd6f845423cad92bd29991703a4)  
+[NORTH EUROPE](https://azure.com/e/fdf0052df17f4de3946c7d159ff86a9f)  
+![cena](./img/price.png)
+- rozdíl cca 30$
+
+
+# 4. Postup
+
+## 4.1. CI/CD Infra (done)
 - Terraform vytvoří:
     - AKS (done)
     - ACR (done)
@@ -42,18 +53,18 @@ pozn: apply těchto manifestů zatím vynecháme, tzn stačí je pouze vygenerov
     - ST (done)
     - Container (done)
 
-### 3.1.1. Pipeline create Infra
+### 4.1.1. Pipeline create Infra
  - terraform validate (done)
  - terraform init (done)
  - terraform plan (done)
  - terraform apply (done)
 
-## 3.2. CI/CD application (In progress)
+## 4.2. CI/CD application (In progress)
 
-### 3.2.1. Pipeline application
+### 4.2.1. Pipeline application
  - build image
  - push
  - deploy
 
-# 4. výsledek
+# 5. výsledek
 web server v azure automatický deploy/ release při změně kódu 
